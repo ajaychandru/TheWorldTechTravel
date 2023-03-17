@@ -28,7 +28,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(express.static('public'));
 app.use(session({
-    secret:process.env.SESSION_SECRETS,
+    secret: process.env.SESSION_SECRETS,
     resave: false,
     saveUninitialized: false
 }));
@@ -129,6 +129,8 @@ User.findOne({ username: "admin" }).then((result) => {
 
         })
     }
+}).catch((err) => {
+    console.log(err);
 })
 
 
@@ -154,12 +156,18 @@ let travelCount;
 let worldCount;
 Post.countDocuments({ category: 'tech' }).then((count) => {
     techCount = count;
+}).catch((err) => {
+    console.log(err);
 })
 Post.countDocuments({ category: 'travel' }).then((count) => {
     travelCount = count;
+}).catch((err) => {
+    console.log(err);
 })
 Post.countDocuments({ category: 'world' }).then((count) => {
     worldCount = count;
+}).catch((err) => {
+    console.log(err);
 })
 
 // ---------------------------Gettin time stamp updating Post count collections
@@ -188,7 +196,11 @@ Post.countDocuments({ date: posstedDate }).then((count) => {
             })
             postCount.save();
         }
+    }).catch((err) => {
+        console.log(err);
     })
+}).catch((err) => {
+    console.log(err);
 })
 
 //---------------------------------------------updating chart data
@@ -352,6 +364,8 @@ app.get('/chart-data', (req, res) => {
 
         res.json([categoryData, postCount, travelData, techData, worldData]);
 
+    }).catch((err) => {
+        console.log(err);
     })
 });
 
@@ -380,11 +394,11 @@ app.get('/auth/google',
     passport.authenticate('google', { scope: ['profile', "email"] }));
 
 app.get('/auth/google/wtt',
-    passport.authenticate('google', {failureRedirect: '/login' }),
+    passport.authenticate('google', { failureRedirect: '/login' }),
     function (req, res) {
-     // Clear the returnTo value from the session
+        // Clear the returnTo value from the session
         res.redirect('/');
-     
+
     });
 app.get('/admin', (req, res) => {
 
@@ -409,6 +423,8 @@ app.get('/delete', (req, res) => {
         Post.find().sort({ _id: -1 }).exec().then((result) => {
 
             res.render('delete', { docs: result, style: "styles", bannerImg: "home" })
+        }).catch((err)=>{
+            console.log(err);
         })
     }
     else {
@@ -422,6 +438,8 @@ app.get('/update', (req, res) => {
         Post.find().sort({ _id: -1 }).exec().then((result) => {
 
             res.render('update', { docs: result, style: "styles", bannerImg: "home" })
+        }).catch((err)=>{
+            console.log(err);
         })
     }
     else {
@@ -453,9 +471,9 @@ app.get('/logout', (req, res) => {
 app.get('/:category', (req, res) => {
 
     topics = _.toLower(req.params.category);
-    
+
     if (req.isAuthenticated()) {
-        
+
         Post.find({ category: topics }).sort({ _id: -1 }).then((result) => {
             res.render('category', { docs: result, pageTitle: _.capitalize(req.params.category), bannerImg: topics, style: "styles", login: "logout", imageSrc: req.user.imageSrc });
 
@@ -465,8 +483,8 @@ app.get('/:category', (req, res) => {
 
 
     } else {
-        
-        
+
+
         Post.find({ category: topics }).sort({ _id: -1 }).then((result) => {
 
 
@@ -510,13 +528,19 @@ app.get('/:category/:postTitle', (req, res) => {
 
                     Post.findById(id).then((result) => {
                         res.render('post', { title: _.capitalize(result.title), category: result.category, date: result.date, content: result.postContent, bannerImg: result.category, recentPost: recentPost, commentPost: commentPost, style: "styles", login: "logout", imageSrc: req.user.imageSrc });
+                    }).catch((err)=>{
+                        console.log(err);
                     })
 
                 } else {
                     Post.findById(id).then((result) => {
                         res.render('post', { title: _.capitalize(result.title), category: result.category, date: result.date, content: result.postContent, bannerImg: category, recentPost: recentPost, commentPost: commentPost, style: "styles", login: "logout", imageSrc: req.user.imageSrc });
+                    }).catch((err)=>{
+                        console.log(err);
                     })
                 }
+            }).catch((err)=>{
+                console.log(err);
             })
 
 
@@ -535,15 +559,23 @@ app.get('/:category/:postTitle', (req, res) => {
                     Post.findById(id).then((result) => {
 
                         res.render('post', { postId: id, title: _.capitalize(result.title), category: result.category, date: result.date, content: result.postContent, bannerImg: result.category, recentPost: recentPost, commentPost: commentPost, style: "styles", login: "login", imageSrc: "https://media.istockphoto.com/id/1130884625/vector/user-member-vector-icon-for-ui-user-interface-or-profile-face-avatar-app-in-circle-design.jpg?s=612x612&w=0&k=20&c=1ky-gNHiS2iyLsUPQkxAtPBWH1BZt0PKBB1WBtxQJRE=" });
+                    }).catch((err)=>{
+                        console.log(err);
                     })
 
                 } else {
                     Post.findById(id).then((result) => {
                         res.render('post', { postId: id, title: _.capitalize(result.title), category: result.category, date: result.date, content: result.postContent, bannerImg: category, recentPost: recentPost, commentPost: commentPost, style: "styles", login: "login", imageSrc: "https://media.istockphoto.com/id/1130884625/vector/user-member-vector-icon-for-ui-user-interface-or-profile-face-avatar-app-in-circle-design.jpg?s=612x612&w=0&k=20&c=1ky-gNHiS2iyLsUPQkxAtPBWH1BZt0PKBB1WBtxQJRE=" });
+                    }).catch((err)=>{
+                        console.log(err);
                     })
                 }
+            }).catch((err)=>{
+                console.log(err);
             })
         }
+    }).catch((err)=>{
+        console.log(err);
     })
 
 
@@ -632,6 +664,8 @@ app.post('/delete', (req, res) => {
 
     Post.findByIdAndDelete(id).then((result) => {
         console.log(result);
+    }).catch((err)=>{
+        console.log(err);
     })
 
     res.redirect('/delete');
@@ -643,6 +677,8 @@ app.post('/update-form', (req, res) => {
     Post.findById({ _id: id }).exec().then((result) => {
         res.render('edit', { docs: result });
 
+    }).catch((err)=>{
+        console.log(err);
     })
 })
 
@@ -654,6 +690,8 @@ app.post('/edit-form', (req, res) => {
     console.log(id);
     Post.findOneAndUpdate({ _id: id }, { title: title, category: category, postContent: content }).then((result) => {
         res.redirect('/' + category)
+    }).catch((err)=>{
+        console.log(err);
     })
 
 });
@@ -694,6 +732,8 @@ app.post('/comment', (req, res) => {
         console.log(comment);
         Post.updateOne({ _id: id }, { $push: { comment: { $each: [comment], $position: 0 } } }).then((result) => {
             res.redirect('/' + category + '/' + id);
+        }).catch((err)=>{
+            console.log(err);
         })
 
 
@@ -718,9 +758,11 @@ app.post('/reply', (req, res) => {
         Post.updateOne({ "comment._id": id }, { $push: { "comment.$.reply": { $each: [reply], $position: 0 } } }).then((result) => {
             console.log(result);
             res.redirect('/' + category + '/' + postId);
+        }).catch((err)=>{
+            console.log(err);
         })
     }
-    else{
+    else {
         res.redirect('/login');
     }
 })
