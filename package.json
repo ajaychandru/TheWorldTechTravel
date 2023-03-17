@@ -19,7 +19,6 @@
     "express-session": "^1.17.3",
     "fs": "^0.0.1-security",
     "html-to-text": "^9.0.4",
-    "image-url-validator": "^1.0.4",
     "lodash": "^4.17.21",
     "mime": "^3.0.0",
     "mongoose": "^6.10.0",
