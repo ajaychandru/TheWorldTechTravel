@@ -103,7 +103,7 @@ passport.deserializeUser(function (id, done) {
 passport.use(new GoogleStrategy({
     clientID: process.env.CLIENT_ID,
     clientSecret: process.env.CLIENT_SECRET,
-    callbackURL: "http://localhost:3000/auth/google/wtt"
+    callbackURL: "https://the-world-tech-travel.onrender.com/auth/google/wtt"
 },
     function (accessToken, refreshToken, profile, cb) {
 
