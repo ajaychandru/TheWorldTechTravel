@@ -1,0 +1,526 @@
+/* stylelint-disable selector-list-comma-newline-after */
+body {
+  font-size: 12px;  
+  background-color: #ffffff;
+}
+h1{
+  font-size: 2rem;
+}
+h3{
+  font-size: 1.5rem;
+}
+h4{
+  font-size: 1.25rem;
+}
+#background-image{
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+#home img{
+  width: 200px;
+  height: 250px;
+}
+.post-container {
+  padding: 32px;
+}
+
+.blog-header {
+  background-color: #001f3f !important;
+  ;
+}
+
+.blog-header-logo {
+  font-family: "Playfair Display", Georgia, "Times New Roman", serif
+    /*rtl:Amiri, Georgia, "Times New Roman", serif*/
+  ;
+  font-size: 2.25rem;
+  color: #F0ECEC
+}
+
+.link-size {
+  font-size: 1rem;
+  color: #FFB8A8
+}
+.login-btn{
+  background-color: #FFB8A8;
+  color: #001f3f;
+  font-weight: 700;
+}
+
+.profile-logo {
+  background-color: #001f3f;
+}
+
+.profile-logo img {
+  border-radius: 100%;
+  width: 48px;
+  height: auto;
+}
+
+.offcanvas {
+  background-color: #001f3f !important;
+}
+
+.offcanvas-title {
+  font-family: sans-serif;
+  color: #F0ECEC;
+}
+
+.btn-offcanvas {
+  background-color: #FFB8A8;
+  color: #001f3f;
+}
+
+.btn-close {
+  background-color: #f9f9f9;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Playfair Display", Georgia, "Times New Roman", serif
+    /*rtl:Amiri, Georgia, "Times New Roman", serif*/
+  ;
+}
+
+
+.navbar-brand:hover,
+.navbar-brand:focus {
+  color: #F0ECEC;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+  color: #f9f9f9;
+}
+
+@media (max-width: 992px) {
+  h3{
+    font-size: 1.25rem;
+  }
+  h4{
+    font-size: 1rem;
+  }
+  #home img{
+    width: 150px;
+    height: 250px;
+  }
+}
+
+.flex-auto {
+  flex: 0 0 auto;
+}
+
+.h-250 {
+  height: 250px;
+}
+
+@media (max-width: 576px) {
+#home img{
+
+  width: 100%;
+  height:275px;
+}
+h1{
+  font-size: 1.5rem;
+}
+h6{
+  font-size: .75rem;
+}
+.post-container {
+  padding: 16px;
+}
+
+
+}
+
+/* Pagination */
+.blog-pagination {
+  margin-bottom: 4rem;
+}
+
+/*
+   * Blog posts
+   */
+.blog-post {
+
+  background-color: #ffffff;
+}
+
+
+
+.blog-post-meta {
+  font-size: 1rem;
+  color: #000000;
+}
+
+.btn-custom {
+  width:10rem;
+  background-color: #FFB8A8;
+}
+
+.btn-custom:hover {
+  background-color: #FFB8A8;
+}
+
+
+.btn-custom-link {
+  color: #001f3f;
+  font-size: 1rem;
+}
+
+/*
+   * Footer
+   */
+.blog-footer {
+  padding: 2.5rem 0;
+  color: #727272;
+  text-align: center;
+  background-color: white;
+  border-top: .05rem solid #e5e5e5;
+}
+
+.blog-footer p:last-child {
+  margin-bottom: 0;
+}
+
+
+/* input form for compose css */
+
+
+
+h2 {
+  margin-bottom: 0;
+}
+
+
+small {
+  display: block;
+  margin-top: 40px;
+  font-size: 9px;
+}
+
+small,
+small a {
+  color: #666;
+}
+
+a {
+
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+#toolbar [data-wysihtml-action] {
+  float: right;
+}
+
+#toolbar,
+textarea {
+  width: 920px;
+  padding: 5px;
+  -webkit-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+textarea {
+  height: 75vh;
+  border: 2px solid green;
+  font-family: Verdana;
+  font-size: 11px;
+}
+
+textarea:focus {
+  color: black;
+  border: 2px solid black;
+}
+
+.wysihtml-command-active {
+  font-weight: bold;
+}
+
+[data-wysihtml-dialog] {
+  margin: 5px 0 0;
+  padding: 5px;
+  border: 1px solid #666;
+}
+
+
+div.editable {
+  border: 1px dashed gray;
+  padding: 10px;
+}
+
+
+.bold-selected {
+  border-color: #000 !important;
+  border-width: 2.5px !important;
+}
+
+/* css for post page */
+#postImage img {
+  display: block;
+  height: auto;
+  max-width: 75%;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 25px;
+}
+
+section p {
+  text-align: justify;
+}
+
+/* ------------------------------------------ */
+
+/*    css for saved btn when url is added to insert image-------------------------- */
+
+.savedbtn-off {
+  opacity: 0;
+}
+
+.savedbtn-on {
+  opacity: 1;
+}
+
+label {
+  font-size: 1rem;
+}
+
+
+.lgCardImg {
+  position: relative;
+  height: 500px;
+
+}
+
+.inputBox {
+  position: relative;
+  top: 30%;
+}
+
+.inputCheck {
+  width: 50px !important;
+  height: 25px;
+  border: 2px solid #FFB8A8;
+
+}
+
+#deleteBtn {
+  width: 100%;
+  margin-top: 50%;
+}
+
+
+
+/* ----------------------------------------admin css-------------------------------------------------------------- */
+
+
+
+
+
+
+.feather {
+  width: 16px;
+  height: 16px;
+}
+
+.navbar {
+  background-color: #001f3f;
+}
+
+/*
+ * Sidebar
+ */
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  /* rtl:raw:
+  right: 0;
+  */
+  bottom: 0;
+  /* rtl:remove */
+  left: 0;
+  z-index: 100;
+  /* Behind the navbar */
+  padding: 48px 0 0;
+  /* Height of navbar */
+  box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
+}
+
+@media (max-width: 767.98px) {
+  .sidebar {
+    top: 5rem;
+  }
+}
+
+.sidebar-sticky {
+  height: calc(100vh - 48px);
+  overflow-x: hidden;
+  overflow-y: auto;
+  /* Scrollable contents if viewport is shorter than content. */
+}
+
+.sidebar .nav-link {
+  font-weight: 500;
+  color: #333;
+}
+
+.sidebar .nav-link .feather {
+  margin-right: 4px;
+  color: #727272;
+}
+
+.sidebar .nav-link.active {
+  color: #2470dc;
+}
+
+.sidebar .nav-link:hover .feather,
+.sidebar .nav-link.active .feather {
+  color: inherit;
+}
+
+.sidebar-heading {
+  font-size: .75rem;
+}
+
+/*
+ * Navbar
+ */
+
+.navbar-brand {
+  padding-top: .75rem;
+  padding-bottom: .75rem;
+  background-color: #001f3f;
+  color: white;
+  box-shadow: inset -1px 0 0 rgba(0, 0, 0, .25);
+}
+
+.navbar .navbar-toggler {
+  top: .25rem;
+  right: 1rem;
+}
+
+.navbar .form-control {
+  padding: .75rem 1rem;
+}
+
+.form-control-light {
+  color: #fff;
+  background-color: white;
+  border-color: rgba(255, 255, 255, .1);
+}
+
+/* dashboard */
+.dataHeadline {
+  background-color: #001f3f;
+  height: 48px;
+}
+
+
+/* signin css */
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+
+  align-items: center;
+
+
+  background-color: white;
+}
+
+.form-signin {
+  max-width: 330px;
+  padding: 15px;
+}
+
+.form-signin .form-floating:focus-within {
+  z-index: 2;
+}
+
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+
+
+/* google signin button */
+
+.google-signin{
+  position: relative;
+  top: 15%;
+  left: 25%;
+  width: fit-content;
+}
+.google-btn {
+ 
+  width: 184px;
+  height: 42px;
+  background-color: #4285f4;
+  border-radius: 2px;
+  box-shadow: 0 3px 4px 0 rgba(0, 0, 0, .25);
+ 
+}
+.google-btn:hover{
+  cursor: pointer;
+}
+.google-icon-wrapper {
+  position: absolute;
+  margin-top: 1px;
+  margin-left: 1px;
+  width: 40px;
+  height: 40px;
+  border-radius: 2px;
+  background-color: #fff;
+}
+
+.google-icon {
+  position: absolute;
+  margin-top: 11px;
+  margin-left: 11px;
+  width: 18px;
+  height: 18px;
+}
+
+.btn-text {
+  float: right;
+  margin: 11px 11px 0 0;
+  color: #fff;
+  font-size: 14px;
+  letter-spacing: 0.2px;
+  font-family: "Roboto";
+}
+
+.btn-text :hover {
+  cursor: pointer;
+  box-shadow: 0 0 6px #4285f4;
+}
+
+.btn-text :active {
+  background: #1669F2;
+}
+
+
+@import url(https://fonts.googleapis.com/css?family=Roboto:500);
+

@@ -1,0 +1,48 @@
+<%- include('header'); -%>
+
+  <div class="row h-100">
+
+
+    <div class="col-md-6 border shadow">
+      <div class="container-fluid mt-5">
+
+        <form method="post" action="/login" autocomplete="off">
+
+          <h1 class="h3 mb-3 fw-normal text-center">Admin sign in</h1>
+
+          <div class="form-floating my-3">
+            <input type="text" class="form-control" id="floatingInput" placeholder="admin" name="username">
+            <label for="floatingInput">Username...</label>
+          </div>
+          <div class="form-floating">
+            <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="password">
+            <label for="floatingPassword">Password</label>
+          </div>
+          <button class="mt-2 btn btn btn-primary" type="submit">Sign in</button>
+
+        </form>
+      </div>
+    </div>
+
+
+    <div class="col-md-6 border shadow">
+      <div class="google-signin">
+
+        <h3 class="text-center">User Sign in</h3>
+
+
+        <div class="google-btn mt-3">
+          <div class="google-icon-wrapper">
+            <img class="google-icon"
+              src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" />
+          </div>
+          <a href="/auth/google" class="btn-text "><b>Sign in with google</a></p>
+        </div>
+      </div>
+    </div>
+    <%- include('footer'); -%>
+  </div>
+
+  </body>
+
+  </html>

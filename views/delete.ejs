@@ -1,0 +1,60 @@
+<%- include('adminHeader'); -%>
+
+<div class="col-lg-10">
+    <div class="row">
+        <h1 class="text-center">Delete Page</h1>
+            <% docs.forEach((docs)=>{%>
+                <div class="col-md-12">
+                  
+                    <form action="/delete" method="post">
+                        <div class="row">
+                            <div class="col-md-1">
+                                <div class="inputBox">
+                                   
+                                    <input class="form-check-input inputCheck" type="hidden" name="id" value="<%=docs._id %>">
+                                </div>
+                               
+                            </div>
+                            <div class="col-md-8">
+                                <div
+                                    class=" row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative blog-post">
+                                    <div class="col p-4 d-flex flex-column position-static">
+                                        <strong class="d-inline-block mb-2 text-primary">
+                                            <%=docs.category %>
+                                        </strong>
+                                        <h3 class="mb-0 blog-post-title">
+                                            <%=docs.title%>
+                                        </h3>
+                                        <div class="mb-1 text-muted">
+                                            <%=docs.date%>
+                                        </div>
+                                        <p style="word-break:normal;" class="card-text mb-auto blog-post-meta">
+                                            <%=docs.cardContent.substring(0,75)%> ...
+                                        </p>
+
+                                    </div>
+                                    <div class="col-auto d-none d-lg-block">
+                                        <img alt="no" src=<%=docs.imgSrc %> >
+                                    </div>
+
+                                </div>
+                                
+                            </div>
+                            <div class="col-md-3 ">
+                                
+                                <button type="submit" id="deleteBtn" class="btn btn-danger ">Delete</button>
+
+                            </div>
+
+                        </div>
+
+
+                    </form>
+                </div>
+                <% })%>
+
+      
+
+    </div>
+</div>
+    

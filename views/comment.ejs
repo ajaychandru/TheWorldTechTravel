@@ -1,0 +1,103 @@
+<section class="gradient-custom">
+
+    <div class="row d-flex border shadow justify-content-center">
+        <div class="col-md-12 col-lg-12 col-xl-12">
+            <div class="card border-0">
+                <div class="card-body p-4  m-5 " id="commentSection">
+
+
+                    <form action="/comment" method="post" >
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control border-primary  rounded-start-5"
+                                placeholder="Comment..." name="comment">
+                            <button name="commentBtn" class="btn btn-outline-primary  rounded-end-5 border-start-0"
+                              value="<%=postId%>"  type="submit"><i class="fa-solid fa-comment"></i></button>
+                            <input type="hidden" value="<%=categoryComment%>" name="categoryComment">
+                        </div>
+
+                    </form>
+
+
+
+
+                    <div class="row">
+                        <div class="col">
+                            <% result.forEach((found,i)=> { %>
+                                <div class="d-flex flex-start">
+                                    <img class="rounded-circle shadow-1-strong me-3" style="width: 48px;height: 48px;" src=<%=found.imageSrc%>
+                                    alt="avatar" />
+                                    <div class="flex-grow-1 flex-shrink-1">
+                                        <div>
+
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <p class="mb-1">
+                                                    <%=found.name %>
+                                                </p>
+
+                                            </div>
+
+                                            <p class="small mb-0">
+                                                <%= found.comment%>
+                                            </p>
+
+                                        </div>
+
+                                        <a class="btn btn-sm btn-outline-primary border-0 mt-3"
+                                            data-bs-toggle="collapse" href="#collapse<%=i%>" role="button"
+                                            aria-expanded="false" aria-controls="collapse<%=i%>">Reply</a>
+
+                                        <div class="collapse" id="collapse<%=i%>">
+                                            <form action="/reply" method="post">
+                                                <div class="input-group mb-3 mt-2">
+
+                                                    <input type="text" name="reply"
+                                                        class="form-control border-primary rounded-start-5"
+                                                        placeholder="reply...">
+                                                    <button class="btn btn-outline-primary rounded-end-5 border-start-0"
+                                                        type="submit" value="<%=found._id%>" name="replyBtn">
+                                                        <i class="fa-solid fa-comment"></i>
+                                                    </button>
+                                                    <input type="hidden" value="<%=categoryComment%>" name="categoryComment">
+                                                    <input type="hidden" value="<%=postId%>" name="postId">
+
+                                            </form>
+                                        </div>
+
+                                    </div>
+
+                                    <% found.reply.forEach((result)=>{%>
+                                        <div class="d-flex flex-start my-4">
+                                            <div class="me-3">
+                                                <img class="rounded-circle shadow-1-strong" src=<%=result.imageSrc%>
+                                                alt="avatar" width="36" height="36" />
+                                            </div>
+                                            <div class="flex-grow-1 flex-shrink-1">
+                                                <div>
+                                                    <div class="d-flex justify-content-between align-items-center">
+                                                        <p class="mb-1">
+                                                            <span class="small">
+                                                                <%=result.name%>
+                                                            </span>
+                                                        </p>
+                                                    </div>
+                                                    <p class="small mb-0">
+                                                        <%=result.reply%>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <% })%>
+
+                                </div>
+                        </div>
+                        <% }); %>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</section>
