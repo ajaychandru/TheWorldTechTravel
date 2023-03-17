@@ -115,23 +115,7 @@ passport.use(new GoogleStrategy({
 
 // ------------------------------------------resgistering admin-------------
 
-User.findOne({ username: "admin" }).then((result) => {
-    if (!result) {
-        const user = new User({
-            username: "admin",
-            role: "admin"
-        });
-        User.register(user, process.env.ADMIN_PASSWORD, (err, user) => {
-            if (err) {
-                console.log(err);
 
-            }
-
-        })
-    }
-}).catch((err) => {
-    console.log(err);
-})
 
 
 //---------------accesing image from local file and storing in publim->images folder
