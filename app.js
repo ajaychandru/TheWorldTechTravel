@@ -249,7 +249,7 @@ app.get('/:category', (req, res) => {
         Post.find({ category: topics }).sort({ _id: -1 }).then((result) => {
 
 
-            res.render('category', { docs: result, pageTitle: _.capitalize(req.params.category), bannerImg: topics, style: "styles", login: "login", imageSrc: "https://media.istockphoto.com/id/1130884625/vector/user-member-vector-icon-for-ui-user-interface-or-profile-face-avatar-app-in-circle-design.jpg?s=612x612&w=0&k=20&c=1ky-gNHiS2iyLsUPQkxAtPBWH1BZt0PKBB1WBtxQJRE=" });
+            res.render('category', { docs: result, pageTitle: _.capitalize(req.params.category), bannerImg: topics, style: "styles", login: "login", imageSrc:"avatar.jpg" });
 
         }).catch((err) => {
             console.log(err);
@@ -319,14 +319,14 @@ app.get('/:category/:postTitle', (req, res) => {
 
                     Post.findById(id).then((result) => {
 
-                        res.render('post', { postId: id, title: _.capitalize(result.title), category: result.category, date: result.date, content: result.postContent, bannerImg: result.category, recentPost: recentPost, commentPost: commentPost, style: "styles", login: "login", imageSrc: "https://media.istockphoto.com/id/1130884625/vector/user-member-vector-icon-for-ui-user-interface-or-profile-face-avatar-app-in-circle-design.jpg?s=612x612&w=0&k=20&c=1ky-gNHiS2iyLsUPQkxAtPBWH1BZt0PKBB1WBtxQJRE=" });
+                        res.render('post', { postId: id, title: _.capitalize(result.title), category: result.category, date: result.date, content: result.postContent, bannerImg: result.category, recentPost: recentPost, commentPost: commentPost, style: "styles", login: "login", imageSrc: "avatar.jpg" });
                     }).catch((err)=>{
                         console.log(err);
                     })
 
                 } else {
                     Post.findById(id).then((result) => {
-                        res.render('post', { postId: id, title: _.capitalize(result.title), category: result.category, date: result.date, content: result.postContent, bannerImg: category, recentPost: recentPost, commentPost: commentPost, style: "styles", login: "login", imageSrc: "https://media.istockphoto.com/id/1130884625/vector/user-member-vector-icon-for-ui-user-interface-or-profile-face-avatar-app-in-circle-design.jpg?s=612x612&w=0&k=20&c=1ky-gNHiS2iyLsUPQkxAtPBWH1BZt0PKBB1WBtxQJRE=" });
+                        res.render('post', { postId: id, title: _.capitalize(result.title), category: result.category, date: result.date, content: result.postContent, bannerImg: category, recentPost: recentPost, commentPost: commentPost, style: "styles", login: "login", imageSrc:"avatar.jpg" });
                     }).catch((err)=>{
                         console.log(err);
                     })
