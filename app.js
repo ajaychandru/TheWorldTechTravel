@@ -319,7 +319,7 @@ app.get('/:category/:postTitle', (req, res) => {
 
                     Post.findById(id).then((result) => {
 
-                        res.render('post', { postId: id, title: _.capitalize(result.title), category: result.category, date: result.date, content: result.postContent, bannerImg: result.category, recentPost: recentPost, commentPost: commentPost, style: "styles", login: "login", imageSrc: "imaages/avatar.jpg" });
+                        res.render('post', { postId: id, title: _.capitalize(result.title), category: result.category, date: result.date, content: result.postContent, bannerImg: result.category, recentPost: recentPost, commentPost: commentPost, style: "styles", login: "login", imageSrc: "images/avatar.jpg" });
                     }).catch((err)=>{
                         console.log(err);
                     })
