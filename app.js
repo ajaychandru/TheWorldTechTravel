@@ -169,12 +169,9 @@ app.get('/admin', (req, res) => {
 
 app.get('/compose', function (req, res) {
 
-    if (req.isAuthenticated() && req.user.role === "admin") {
+
         res.render('compose', { style: "styles" });
-    }
-    else {
-        res.redirect('/login')
-    }
+
 
 
 })
@@ -351,7 +348,6 @@ app.get('/:category/:postTitle', (req, res) => {
 // -----------------------------------------------------------post request-----------------------------------------------------
 app.post('/submit-form', upload.single('image'), async (req, res) => {
 
-    if (req.isAuthenticated() && req.user.role === "admin") {
       
     const filename = req.file.filename;
     const updateFilename = 'public/images/' + filename;
@@ -419,10 +415,7 @@ app.post('/submit-form', upload.single('image'), async (req, res) => {
         res.redirect("/" + category);
     }
 
-    }
-    else {
-        res.redirect('/login')
-    }
+    
 
 
 
