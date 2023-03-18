@@ -145,7 +145,7 @@ app.get('/', function (req, res) {
 
     } else {
         Post.find({ featured: "true" }).sort({ _id: -1 }).limit(6).exec().then((docs) => {
-            res.render('home', { docs: docs, bannerImg: "home", style: "styles", login: "login", imageSrc: "avatar.jpg" });
+            res.render('home', { docs: docs, bannerImg: "home", style: "styles", login: "login", imageSrc: "images/avatar.jpg" });
         }).catch((err) => {
             console.log(err);
         })
@@ -212,7 +212,7 @@ app.get('/update', (req, res) => {
 })
 app.get('/login', (req, res) => {
 
-    res.render('login', { style: "styles", bannerImg: "home", login: "login", imageSrc: "avatar.jpg"});
+    res.render('login', { style: "styles", bannerImg: "home", login: "login", imageSrc: "images/avatar.jpg"});
 
 
 
@@ -249,7 +249,7 @@ app.get('/:category', (req, res) => {
         Post.find({ category: topics }).sort({ _id: -1 }).then((result) => {
 
 
-            res.render('category', { docs: result, pageTitle: _.capitalize(req.params.category), bannerImg: topics, style: "styles", login: "login", imageSrc:"avatar.jpg" });
+            res.render('category', { docs: result, pageTitle: _.capitalize(req.params.category), bannerImg: topics, style: "styles", login: "login", imageSrc:"images/avatar.jpg" });
 
         }).catch((err) => {
             console.log(err);
@@ -319,14 +319,14 @@ app.get('/:category/:postTitle', (req, res) => {
 
                     Post.findById(id).then((result) => {
 
-                        res.render('post', { postId: id, title: _.capitalize(result.title), category: result.category, date: result.date, content: result.postContent, bannerImg: result.category, recentPost: recentPost, commentPost: commentPost, style: "styles", login: "login", imageSrc: "avatar.jpg" });
+                        res.render('post', { postId: id, title: _.capitalize(result.title), category: result.category, date: result.date, content: result.postContent, bannerImg: result.category, recentPost: recentPost, commentPost: commentPost, style: "styles", login: "login", imageSrc: "imaages/avatar.jpg" });
                     }).catch((err)=>{
                         console.log(err);
                     })
 
                 } else {
                     Post.findById(id).then((result) => {
-                        res.render('post', { postId: id, title: _.capitalize(result.title), category: result.category, date: result.date, content: result.postContent, bannerImg: category, recentPost: recentPost, commentPost: commentPost, style: "styles", login: "login", imageSrc:"avatar.jpg" });
+                        res.render('post', { postId: id, title: _.capitalize(result.title), category: result.category, date: result.date, content: result.postContent, bannerImg: category, recentPost: recentPost, commentPost: commentPost, style: "styles", login: "login", imageSrc:"images/avatar.jpg" });
                     }).catch((err)=>{
                         console.log(err);
                     })
