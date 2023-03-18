@@ -357,11 +357,11 @@ app.post('/submit-form', upload.single('image'), async (req, res) => {
     sharp(updateFilename)
         .resize(
             {
-                width: 200,
-                height: 250,
+                width: 550,
+                height: 275,
                 fit: 'fill',
 
-            })
+            }).toFormat('avif')
 
         .toFile(resizedFilename, (err) => {
             if (err)
