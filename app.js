@@ -168,10 +168,12 @@ app.get('/admin', (req, res) => {
 })
 
 app.get('/compose', function (req, res) {
-
+    if (req.isAuthenticated() && req.user.role === "admin") {
 
         res.render('compose', { style: "styles" });
-
+    }else{
+        res.render('/login');
+    }
 
 
 })
