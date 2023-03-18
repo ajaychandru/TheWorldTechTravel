@@ -351,6 +351,8 @@ app.get('/:category/:postTitle', (req, res) => {
 // -----------------------------------------------------------post request-----------------------------------------------------
 app.post('/submit-form', upload.single('image'), async (req, res) => {
 
+    if (req.isAuthenticated() && req.user.role === "admin") {
+      
     const filename = req.file.filename;
     const updateFilename = 'public/images/' + filename;
     const resizedFilename = 'public/images/resized-' + filename;
@@ -379,7 +381,7 @@ app.post('/submit-form', upload.single('image'), async (req, res) => {
     console.log(featured);
 
     const imgSource = resizedFilename.substring(7, resizedFilename.length);
-    console.log('/' + category);
+    
     const content = req.body.content;
     const text = htmlToText(content, {
         wordwrap: 10
@@ -416,6 +418,12 @@ app.post('/submit-form', upload.single('image'), async (req, res) => {
         blogPost.save();
         res.redirect("/" + category);
     }
+
+    }
+    else {
+        res.redirect('/login')
+    }
+
 
 
 })
