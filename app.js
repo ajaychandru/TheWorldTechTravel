@@ -145,7 +145,7 @@ app.get('/', function (req, res) {
 
     } else {
         Post.find({ featured: "true" }).sort({ _id: -1 }).limit(6).exec().then((docs) => {
-            res.render('home', { docs: docs, bannerImg: "home", style: "styles", login: "login", imageSrc: "https://media.istockphoto.com/id/1130884625/vector/user-member-vector-icon-for-ui-user-interface-or-profile-face-avatar-app-in-circle-design.jpg?s=612x612&w=0&k=20&c=1ky-gNHiS2iyLsUPQkxAtPBWH1BZt0PKBB1WBtxQJRE=" });
+            res.render('home', { docs: docs, bannerImg: "home", style: "styles", login: "login", imageSrc: "avatar.jpg" });
         }).catch((err) => {
             console.log(err);
         })
@@ -212,7 +212,7 @@ app.get('/update', (req, res) => {
 })
 app.get('/login', (req, res) => {
 
-    res.render('login', { style: "styles", bannerImg: "home", login: "login", imageSrc: "https://media.istockphoto.com/id/1130884625/vector/user-member-vector-icon-for-ui-user-interface-or-profile-face-avatar-app-in-circle-design.jpg?s=612x612&w=0&k=20&c=1ky-gNHiS2iyLsUPQkxAtPBWH1BZt0PKBB1WBtxQJRE=" });
+    res.render('login', { style: "styles", bannerImg: "home", login: "login", imageSrc: "avatar.jpg"});
 
 
 
@@ -353,7 +353,7 @@ app.post('/submit-form', upload.single('image'), async (req, res) => {
 
     const filename = req.file.filename;
     const updateFilename = 'public/images/' + filename;
-    const resizedFilename = 'public/images/resized-' + filename;
+    const resizedFilename = 'public/images/resized-' + filename+'.avif';
     sharp(updateFilename)
         .resize(
             {
