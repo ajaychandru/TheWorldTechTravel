@@ -249,7 +249,7 @@ app.get('/:category', (req, res) => {
         Post.find({ category: topics }).sort({ _id: -1 }).then((result) => {
 
 
-            res.render('category', { docs: result, pageTitle: _.capitalize(req.params.category), bannerImg: topics, style: "styles", login: "login", imageSrc:"https://the-world-tech-travel.onrender.com/public/avatar.jpg" });
+            res.render('category', { docs: result, pageTitle: _.capitalize(req.params.category), bannerImg: topics, style: "styles", login: "login", imageSrc:"https://the-world-tech-travel.onrender.com/images/avatar.jpg" });
 
         }).catch((err) => {
             console.log(err);
