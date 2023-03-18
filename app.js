@@ -353,15 +353,14 @@ app.post('/submit-form', upload.single('image'), async (req, res) => {
 
     const filename = req.file.filename;
     const updateFilename = 'public/images/' + filename;
-    const resizedFilename = 'public/images/resized-' + filename+'.avif';
+    const resizedFilename = 'public/images/resized-' + filename;
     sharp(updateFilename)
         .resize(
             {
                 width: 550,
                 height: 275,
-                fit: 'fill',
-
-            }).toFormat('avif')
+            
+            })
 
         .toFile(resizedFilename, (err) => {
             if (err)
