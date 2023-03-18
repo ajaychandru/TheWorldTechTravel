@@ -36,7 +36,7 @@
   <div class="d-flex flex-row  ">
 
 
-    <nav class="navbar navbar-expand-sm navbar-dark blog-header p-2 flex-grow-1 ">
+    <nav class="navbar navbar-expand-sm navbar-dark blog-header p-2 flex-grow-1 fixed-top">
       <div class="container">
         <a class="navbar-brand" href="/"> The World Tech Travel</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
@@ -44,21 +44,23 @@
             class="navbar-toggler-icon"></span></button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-            <li class="nav-item"><a class="nav-link link-size" href="/">Home</a></li>
-            <li class="nav-item"><a class="nav-link link-size" href="/world">World</a></li>
-            <li class="nav-item"><a class="nav-link link-size" href="/tech">Tech</a></li>
-            <li class="nav-item"><a class="nav-link link-size" href="/travel">Travel</a></li>
-            <li class="nav-item"><a class="nav-link  login-btn btn btn-md rounded-5" href="/<%=login%>"><%=login%></a></li>
+         
+            <li class="nav-item text-center"><a class="nav-link link-size " href="/">Home</a></li>
+            <li class="nav-item text-center"><a class="nav-link link-size" href="/world">World</a></li>
+            <li class="nav-item text-center"><a class="nav-link link-size" href="/tech">Tech</a></li>
+            <li class="nav-item text-center"><a class="nav-link link-size" href="/travel">Travel</a></li>
+            <li class="nav-item text-center"><a class="nav-link  login-btn btn btn-md rounded-5" href="/<%=login%>"><%=login%></a></li>
+            
           </ul>
-
+          <div class="p-2 profile-logo text-center ms-sm-3">
+            <img   src="<%=imageSrc%>" alt="Avater" style="width:48px;height:48px;border-radius: 100%;" >
+          </div>
 
         </div>
       </div>
 
     </nav>
-    <div class="p-2 profile-logo">
-      <img  src="<%=imageSrc%>" alt="Avater" style="width:48px;height:48px;border-radius: 100%;" >
-    </div>
+
   
     
 

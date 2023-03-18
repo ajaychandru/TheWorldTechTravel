@@ -1,127 +1,142 @@
+
 <%- include('adminHeader'); -%>
 
-  </div>
-  <div class="row">
-    <div class="container-fluid">
-      <form class="ewrapper needs-validation form-control rounded border"  method="post"
-        action="/edit-form" id="myForm">
-        <input type="hidden" name="id" value="<%=docs._id%>">
-        <div>
-          <label for="title">Title</label>
-          <input class="form-control my-3" type="text" name="title" id="title" value="<%=docs.title%>" autocapitalize="words">
-          <div class="invalid-feedback">
-            <p>Title field cannot be empty.</p>
-          </div>
-        </div>
-
-        <div class="form-group my-3">
-          <label for="category">Select Category</label>
-          <select class="form-control" name="category">
-            <option><%=docs.category%></option>
-            <option>tech</option>
-            <option>travel</option>
-          </select>
-        </div>
 
 
-        <input type="checkbox" name="featuredPost" value="" id="checkbox">
-
-        <div >
-          <div class="toolbar position-sticky top-100" style="display: none;">
-            <a class="btn btn-light highlight" data-wysihtml-command="bold" title="CTRL+B"><i
-                class="fa-solid fa-bold"></i></a>
-            <a class="btn btn-light highlight" data-wysihtml-command="italic" title="CTRL+I"><i
-                class="fa-solid fa-italic"></i></a>
-            <a class="btn btn-light" data-wysihtml-command="createLink"><i class="fa-solid fa-link"></i></a>
-            <a class="btn btn-light" data-wysihtml-command="removeLink"><s><i
-                  class="fa-solid fa-link-slash"></i></s></a>
-            <a class="btn btn-light" data-wysihtml-command="insertImage"><i class="fa-solid fa-image"></i></a>
-            <a class="btn btn-light" data-wysihtml-command="formatBlock" data-wysihtml-command-value="h1">H1</a>
-            <a class="btn btn-light" data-wysihtml-command="formatBlock" data-wysihtml-command-value="h2">H2</a>
-            <a class="btn btn-light" data-wysihtml-command="formatBlock"
-              data-wysihtml-command-blank-value="true">Text</i></a>
-            <a class="btn btn-light" data-wysihtml-command="insertUnorderedList"><i class="fa-solid fa-list"></i></a>
-            <a class="btn btn-light" data-wysihtml-command="insertOrderedList"><i class="fa-solid fa-list-ol"></i></a>
-
-            <a class="btn btn-light" data-wysihtml-command="undo"><i class="fa-solid fa-rotate-left"></i></a>
-            <a class="btn btn-light" data-wysihtml-command="redo"><i class="fa-solid fa-rotate-right"></i></a>
+      <div class="col-sm-10">
 
 
+        <div class="row">
+          <div class="container-fluid">
+            <form class="ewrapper needs-validation form-control rounded border" method="post" action="/edit-form"
+              id="myForm">
+              <input type="hidden" name="id" value="<%=docs._id%>">
+              <div>
+                <label for="title">Title</label>
+                <input class="form-control my-3" type="text" name="title" id="title" value="<%=docs.title%>"
+                  autocapitalize="words">
+                <div class="invalid-feedback">
+                  <p>Title field cannot be empty.</p>
+                </div>
+              </div>
 
-            <div data-wysihtml-dialog="createLink" style="display: none;">
-              <label>
-                Link:
-                <input data-wysihtml-dialog-field="href" value="http://">
-              </label>
-              <a data-wysihtml-dialog-action="save">OK</a>&nbsp;<a data-wysihtml-dialog-action="cancel">Cancel</a>
-            </div>
-
-            <div data-wysihtml-dialog="insertImage" style="display: none;">
-
-              <label>Image: <input id="imgURL" data-wysihtml-dialog-field="src" name="src" value=""
-                  autocomplete="off"></label>
-
-
-
-
-              <label>Size: <input data-wysihtml-dialog-field="width" type="text" value="200" style="width: 40px;"> x
-                <input data-wysihtml-dialog-field="height" type="text" value="200" style="width: 40px;"> px</label>
-              <label>Align:
-                <select data-wysihtml-dialog-field="className">
-                  <option value="">default</option>
-                  <option value="wysiwyg-float-left">left</option>
-                  <option value="wysiwyg-float-right">right</option>
+              <div class="form-group my-3">
+                <label for="category">Select Category</label>
+                <select class="form-control" name="category">
+                  <option>
+                    <%=docs.category%>
+                  </option>
+                  <option>tech</option>
+                  <option>travel</option>
                 </select>
-              </label>
-              <button data-wysihtml-dialog-action="save" class="btn" type="submit" id="saveBtn">OK</button>&nbsp;
-              <a data-wysihtml-dialog-action="cancel" id="cancelBtn">Cancel</a>
-            </div>
+              </div>
+
+
+              <input type="checkbox" name="featuredPost" value="" id="checkbox">
+
+              <div>
+                <div class="toolbar position-sticky top-100" style="display: none;">
+                  <a class="btn btn-light highlight" data-wysihtml-command="bold" title="CTRL+B"><i
+                      class="fa-solid fa-bold"></i></a>
+                  <a class="btn btn-light highlight" data-wysihtml-command="italic" title="CTRL+I"><i
+                      class="fa-solid fa-italic"></i></a>
+                  <a class="btn btn-light" data-wysihtml-command="createLink"><i class="fa-solid fa-link"></i></a>
+                  <a class="btn btn-light" data-wysihtml-command="removeLink"><s><i
+                        class="fa-solid fa-link-slash"></i></s></a>
+                  <a class="btn btn-light" data-wysihtml-command="insertImage"><i class="fa-solid fa-image"></i></a>
+                  <a class="btn btn-light" data-wysihtml-command="formatBlock" data-wysihtml-command-value="h1">H1</a>
+                  <a class="btn btn-light" data-wysihtml-command="formatBlock" data-wysihtml-command-value="h2">H2</a>
+                  <a class="btn btn-light" data-wysihtml-command="formatBlock"
+                    data-wysihtml-command-blank-value="true">Text</i></a>
+                  <a class="btn btn-light" data-wysihtml-command="insertUnorderedList"><i
+                      class="fa-solid fa-list"></i></a>
+                  <a class="btn btn-light" data-wysihtml-command="insertOrderedList"><i
+                      class="fa-solid fa-list-ol"></i></a>
+
+                  <a class="btn btn-light" data-wysihtml-command="undo"><i class="fa-solid fa-rotate-left"></i></a>
+                  <a class="btn btn-light" data-wysihtml-command="redo"><i class="fa-solid fa-rotate-right"></i></a>
+
+
+
+                  <div data-wysihtml-dialog="createLink" style="display: none;">
+                    <label>
+                      Link:
+                      <input data-wysihtml-dialog-field="href" value="http://">
+                    </label>
+                    <a data-wysihtml-dialog-action="save">OK</a>&nbsp;<a data-wysihtml-dialog-action="cancel">Cancel</a>
+                  </div>
+
+                  <div data-wysihtml-dialog="insertImage" style="display: none;">
+
+                    <label>Image: <input id="imgURL" data-wysihtml-dialog-field="src" name="src" value=""
+                        autocomplete="off"></label>
+
+
+
+
+                    <label>Size: <input data-wysihtml-dialog-field="width" type="text" value="200" style="width: 40px;">
+                      x
+                      <input data-wysihtml-dialog-field="height" type="text" value="200" style="width: 40px;">
+                      px</label>
+                    <label>Align:
+                      <select data-wysihtml-dialog-field="className">
+                        <option value="">default</option>
+                        <option value="wysiwyg-float-left">left</option>
+                        <option value="wysiwyg-float-right">right</option>
+                      </select>
+                    </label>
+                    <button data-wysihtml-dialog-action="save" class="btn" type="submit" id="saveBtn">OK</button>&nbsp;
+                    <a data-wysihtml-dialog-action="cancel" id="cancelBtn">Cancel</a>
+                  </div>
+                </div>
+
+                <div class="invalid-feedback" id="invalid-url">
+                  <p>invalid image url</p>
+                </div>
+              </div>
+              <br>
+
+              <!-- textarea field -->
+              <div>
+                <textarea class="editable form-control" name="content" placeholder="Enter text ..." id="textArea"
+                  value="" autocapitalize="sentences"><%=docs.postContent%></textarea>
+                <div class="invalid-feedback">
+                  <p>Content cannot be empty</p>
+                </div>
+              </div>
+
+              <!-- final submit -->
+              <div class="d-grid gap-2 my-3">
+                <button class="btn btn-primary" type="submit">Submit</button>
+              </div>
+            </form>
           </div>
 
-          <div class="invalid-feedback" id="invalid-url">
-            <p>invalid image url</p>
-          </div>
         </div>
-        <br>
-
-        <!-- textarea field -->
-        <div>
-          <textarea class="editable form-control" name="content" placeholder="Enter text ..." id="textArea" value=""
-            autocapitalize="sentences"><%=docs.postContent%></textarea>
-          <div class="invalid-feedback">
-            <p>Content cannot be empty</p>
-          </div>
-        </div>
-
-        <!-- final submit -->
-        <div class="d-grid gap-2 my-3">
-          <button class="btn btn-primary" type="submit">Submit</button>
-        </div>
-      </form>
+      </div>
     </div>
-
   </div>
-  <footer class="blog-footer">
-    <p><i class="fa-solid fa-copyright"></i> Ajay C 2023</p>
-    <p>
-      <a href="#">Back to top</a>
-    </p>
-  </footer>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
-    crossorigin="anonymous"></script>
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <footer class="blog-footer">
+      <p><i class="fa-solid fa-copyright"></i> Ajay C 2023</p>
+      <p>
+        <a href="#">Back to top</a>
+      </p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+      crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-  <script src="/dist/wysihtml.js"></script>
-  <script src="/dist/wysihtml.all-commands.js"></script>
-  <script src="/dist/wysihtml.table_editing.js"></script>
-  <script src="/dist/wysihtml.toolbar.js"></script>
+    <script src="/dist/wysihtml.js"></script>
+    <script src="/dist/wysihtml.all-commands.js"></script>
+    <script src="/dist/wysihtml.table_editing.js"></script>
+    <script src="/dist/wysihtml.toolbar.js"></script>
 
-  <script src="/parser_rules/advanced_unwrap.js"></script>
+    <script src="/parser_rules/advanced_unwrap.js"></script>
 
 
-  <script src="/javaScript/compose.js"></script>
+    <script src="/javaScript/compose.js"></script>
 
-  </body>
+</body>
 
-  </html>
+</html>
